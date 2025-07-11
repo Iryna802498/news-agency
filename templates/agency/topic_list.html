@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>
+    Topic list
+    <a href="#" class="btn btn-primary link-to-page">Create</a>
+  </h1>
+  {% if topic_list %}
+    <ul>
+      {% for topic in topic_list %}
+        <li>
+          <a href="#">{{ topic.id }}</a>
+          {{ topic.name }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no topics!</p>
+  {% endif %}
+{% endblock %}
