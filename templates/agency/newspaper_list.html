@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>
+    Newspaper list
+    <a href="#" class="btn btn-primary link-to-page">Create</a>
+  </h1>
+  {% if newspaper_list %}
+    <ul>
+      {% for newspaper in newspaper_list %}
+        <li>
+          <a href="#">{{ newspaper.id }}</a>
+          {{ newspaper.title }} {{ newspaper.published_date }}
+        </li>
+        <p>{{ newspaper.context }}</p>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no topics!</p>
+  {% endif %}
+{% endblock %}
