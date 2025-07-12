@@ -1,1 +1,21 @@
+{% extends "base.html" %}
 
+{% block content %}
+  <h1>
+    Redactor List
+    <a href="#" class="btn btn-primary">Create</a>
+  </h1>
+
+  {% if redactor_list %}
+    {% for redactor in redactor_list %}
+      <ul>
+        <li>
+          {{ redactor.id }}
+          <a href="{{ driver.get_absolute_url }}">{{ redactor.username }} {% if user == redactor %} (Me){% endif %}</a>
+        </li>
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>There are no redactors in the agency.</p>
+  {% endif %}
+{% endblock %}
