@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
+    "crispy_forms",
+    "crispy_bootstrap5",
     "agency",
 ]
 
@@ -133,3 +135,7 @@ AUTH_USER_MODEL = "agency.Redactor"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
