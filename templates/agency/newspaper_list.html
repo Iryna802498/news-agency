@@ -8,7 +8,7 @@
     <ul>
       {% for newspaper in newspaper_list %}
         <li>
-          <a href="#">{{ newspaper.id }}</a>
+          <a href="{% url 'agency:newspaper-detail' pk=newspaper.id %}">{{ newspaper.id }}</a>
           {{ newspaper.title }}
         </li>
         <p>{{ newspaper.context }}</p>

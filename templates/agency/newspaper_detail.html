@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ newspaper.title }}</h1>
+  <p class="text-muted small mb-2">
+    {% with publishers_list=newspaper.publishers.all %}
+      {% if publishers_list|length == 1 %}
+        Redactor:
+      {% else %}
+        Redactors:
+      {% endif %}
+      {% for publisher in publishers_list %}
+        {{ publisher.username }}{% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    {% endwith %}
+    <br />
+    Published in: {{ newspaper.published_date|date:'M. d, Y, g:i a' }}
+  </p>
+  <p>{{ newspaper.content }}</p>
+{% endblock %}
