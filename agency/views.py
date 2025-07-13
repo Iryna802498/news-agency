@@ -26,10 +26,6 @@ class TopicListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 3
 
 
-class TopicDetailView(LoginRequiredMixin, generic.DetailView):
-    model = Topic
-
-
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
     queryset = Newspaper.objects.prefetch_related("topic", "publishers")
