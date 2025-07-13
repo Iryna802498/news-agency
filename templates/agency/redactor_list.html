@@ -11,7 +11,7 @@
       <ul>
         <li>
           {{ redactor.id }}
-          <a href="{{ driver.get_absolute_url }}">{{ redactor.username }} {% if user == redactor %} (Me){% endif %}</a>
+          <a href="{{ redactor.get_absolute_url }}">{{ redactor.username }} {% if user == redactor %} (Me){% endif %}</a>
         </li>
       </ul>
     {% endfor %}
