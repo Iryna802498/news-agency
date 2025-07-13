@@ -32,7 +32,7 @@ class TopicDetailView(LoginRequiredMixin, generic.DetailView):
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
-    queryset = Newspaper.objects.prefetch_related("topic", "redactor")
+    queryset = Newspaper.objects.prefetch_related("topic", "publishers")
     context_object_name = "newspaper_list"
     template_name = "agency/newspaper_list.html"
     paginate_by = 3
