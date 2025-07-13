@@ -7,10 +7,7 @@
   {% if topic_list %}
     <ul>
       {% for topic in topic_list %}
-        <li>
-          <a href="#">{{ topic.id }}</a>
-          {{ topic.name }}
-        </li>
+        <li>{{ topic.id }} {{ topic.name }}</li>
       {% endfor %}
     </ul>
   {% else %}
