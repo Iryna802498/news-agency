@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>
-    Newspaper list
-    <a href="#" class="link-to-page btn btn-primary">Create</a>
-  </h1>
+  <div class="header-row">
+    <h1>
+      Newspaper list
+      <a href="{% url 'agency:newspaper-create' %}" class="btn btn-primary">Create</a>
+    </h1>
+  </div>
   {% if newspaper_list %}
-    <ul>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+      </tr>
       {% for newspaper in newspaper_list %}
-        <li>
-          <a href="{% url 'agency:newspaper-detail' pk=newspaper.id %}">{{ newspaper.id }}</a>
-          {{ newspaper.title }}
-        </li>
-        <p>{{ newspaper.context }}</p>
+        <tr>
+          <td>
+              {{ newspaper.id }}
+          </td>
+          <td>
+              <a href="{% url 'agency:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a>
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
+    </table>
   {% else %}
-    <p>There are no topics!</p>
+    <p>There are no newspapers!</p>
   {% endif %}
 {% endblock %}
