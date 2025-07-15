@@ -1,3 +1,8 @@
 body {
     margin-top: 20px;
 }
+
+.header-row .btn {
+    float: right;
+    margin: 0 2px 0 2px;
+}
