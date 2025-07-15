@@ -9,7 +9,7 @@ from .forms import (
     NewspaperForm,
     RedactorCreationForm,
     RedactorExperienceUpdateForm,
-    )
+)
 
 
 @login_required
@@ -104,7 +104,9 @@ class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
         return context
 
 
-class RedactorYearsExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
+class RedactorYearsExperienceUpdateView(
+        LoginRequiredMixin,
+        generic.UpdateView):
     model = Redactor
     form_class = RedactorExperienceUpdateForm
     success_url = reverse_lazy("agency:redactor-list")
@@ -113,7 +115,7 @@ class RedactorYearsExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
         context = super().get_context_data(**kwargs)
         context["title"] = "Update years of experience"
         return context
-    
+
 
 class RedactorDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Redactor

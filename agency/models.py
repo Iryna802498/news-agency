@@ -47,6 +47,6 @@ class Redactor(AbstractUser):
 
     def __str__(self) -> str:
         return f"{self.username} ({self.first_name} {self.last_name})"
-    
+
     def get_absolute_url(self):
         return reverse("agency:redactor-detail", kwargs={"pk": self.pk})

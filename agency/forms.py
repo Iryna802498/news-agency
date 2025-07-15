@@ -28,13 +28,13 @@ class RedactorCreationForm(UserCreationForm):
             "first_name",
             "last_name",
         )
-    
+
     def clean_years_of_experience(self):
         years = self.cleaned_data["years_of_experience"]
         if years < 0:
             raise ValidationError("Years of experience cannot be negative.")
         return years
-    
+
 
 class RedactorExperienceUpdateForm(forms.ModelForm):
     class Meta:
