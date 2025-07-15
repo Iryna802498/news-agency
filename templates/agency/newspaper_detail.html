@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>{{ newspaper.title }}</h1>
+  <h1>
+    {{ newspaper.title }}
+    <a href="#" class="link-to-page btn btn-primary">Create</a>
+  </h1>
   <p class="text-muted small mb-2">
     {% with publishers_list=newspaper.publishers.all %}
       {% if publishers_list|length == 1 %}
@@ -16,4 +19,11 @@
     Published in: {{ newspaper.published_date|date:'M. d, Y, g:i a' }}
   </p>
   <p>{{ newspaper.content }}</p>
+  <a href="#" class="link-to-page btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="#" class="link-to-page btn btn-secondary link-to-page">
+      Update
+    </a>
 {% endblock %}
