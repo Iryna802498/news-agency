@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.views import generic
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Topic, Newspaper, Redactor
+from .forms import TopicForm
 
 
+@login_required
 def index(request):
     """View fuction for the home page of the site."""
     context = {
@@ -24,6 +27,25 @@ class TopicListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "topic_list"
     template_name = "agency/topic_list.html"
     paginate_by = 3
+
+
+class TopicCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Topic
+    success_url = reverse_lazy("agency:topic-list")
+    template_name = "agency/topic_form.html"
+    form_class = TopicForm
+
+
+class TopicUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Topic
+    fields = "__all__"
+    success_url = reverse_lazy("agency:topic-list")
+
+
+class TopicDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Topic
+    fields = "__all__"
+    success_url = reverse_lazy("agency:topic-list")
 
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
