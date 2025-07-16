@@ -11,9 +11,9 @@ from agency.forms import (TopicForm,
 
 class FormValidationTest(TestCase):
     def test_topic_form_valid(self):
-        form = TopicForm(data={"name":"Culture"})
+        form = TopicForm(data={"name": "Culture"})
         self.assertTrue(form.is_valid())
-    
+
     def test_newspaper_form_valid_empty(self):
         form = NewspaperForm(
             data={
@@ -24,7 +24,7 @@ class FormValidationTest(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn("topic", form.errors)
         self.assertIn("publishers", form.errors)
-    
+
     def test_redactor_form_valid(self):
         form = RedactorCreationForm(
             data={
@@ -37,7 +37,7 @@ class FormValidationTest(TestCase):
             }
         )
         self.assertTrue(form.is_valid())
-    
+
     def test_redactor_creation_form_invalid_experience(self):
         form_data = {
             "username": "test.username",
@@ -54,7 +54,7 @@ class FormValidationTest(TestCase):
             form.errors["years_of_experience"],
             ["Years of experience cannot be negative."]
         )
-    
+
     def test_redactor_experience_update_form_valid(self):
         redactor = get_user_model().objects.create_user(
             username="test.user",
@@ -79,7 +79,7 @@ class FormValidationTest(TestCase):
         )
         self.assertFalse(form.is_valid())
         self.assertIn("years_of_experience", form.errors)
-    
+
     def test_search_form(self):
         redactor_form = RedactorSearchForm(
             data={

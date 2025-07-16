@@ -67,8 +67,13 @@ class PrivateRedactorTest(TestCase):
             "last_name": "Test Last",
             "years_of_experience": 3,
         }
-        res = self.client.post(reverse("agency:redactor-create"), data=form_data)
-        new_redactor = get_user_model().objects.get(username=form_data["username"])
+        res = self.client.post(
+            reverse("agency:redactor-create"),
+            data=form_data
+        )
+        new_redactor = get_user_model().objects.get(
+            username=form_data["username"]
+        )
         self.assertRedirects(
             res,
             reverse(
@@ -77,7 +82,9 @@ class PrivateRedactorTest(TestCase):
             )
         )
         self.assertTrue(
-            get_user_model().objects.filter(username=form_data["username"]).exists()
+            get_user_model().objects.filter(
+                username=form_data["username"]
+            ).exists()
         )
 
     def test_search_redactor_filters_queryset(self):
@@ -115,6 +122,9 @@ class PrivateNewspaperTest(TestCase):
         )
         newspaper.topic.set([topic1, topic2])
 
-        response = self.client.get(NEWSPAPER_FORMAT_URL, {"title": "Test Title"})
+        response = self.client.get(
+            NEWSPAPER_FORMAT_URL,
+            {"title": "Test Title"}
+        )
         self.assertContains(response, "Test Title")
         self.assertTemplateUsed(response, "agency/newspaper_list.html")

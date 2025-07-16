@@ -8,7 +8,7 @@ class ModelTest(TestCase):
     def test_topic_str(self):
         topic = Topic.objects.create(name="Test_topic")
         self.assertEqual(str(topic), topic.name)
-    
+
     def test_redactor_str(self):
         redactor = get_user_model().objects.create(
             username="test.username",
@@ -20,7 +20,7 @@ class ModelTest(TestCase):
             str(redactor),
             f"{redactor.username} ({redactor.first_name} {redactor.last_name})"
         )
-    
+
     def test_redactor_get_ablosute_url(self):
         redactor = get_user_model().objects.create(
             username="test.user",
@@ -28,10 +28,10 @@ class ModelTest(TestCase):
         )
         expected_url = reverse(
             "agency:redactor-detail",
-            kwargs={"pk":redactor.pk}
+            kwargs={"pk": redactor.pk}
         )
         self.assertEqual(redactor.get_absolute_url(), expected_url)
-    
+
     def test_newspaper_str(self):
         topic = Topic.objects.create(name="Test_topic")
         publishers = get_user_model().objects.create(
@@ -47,7 +47,7 @@ class ModelTest(TestCase):
         newspaper.topic.add(topic)
         newspaper.publishers.add(publishers)
         self.assertEqual(str(newspaper), newspaper.title)
-    
+
     def test_create_redactor_with_experience(self):
         username = "test.user"
         password = "test1234"
