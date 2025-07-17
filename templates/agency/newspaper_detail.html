@@ -1,30 +1,36 @@
-{% extends "base.html" %}
+{% extends "layouts/base-presentation.html" %}
 {% block content %}
-  <div class="header-row">
-    <h1>
-      {{ newspaper.title }}
-    </h1>
-  </div>
-  <p class="text-muted small mb-2">
-    {% with publishers_list=newspaper.publishers.all %}
-      {% if publishers_list|length == 1 %}
-        Redactor:
-      {% else %}
-        Redactors:
-      {% endif %}
-      {% for publisher in publishers_list %}
-        {{ publisher.username }}{% if not forloop.last %}, {% endif %}
-      {% endfor %}
-    {% endwith %}
-    <br />
-    Published in: {{ newspaper.published_date|date:'M. d, Y, g:i a' }}
-  </p>
-  <p>{{ newspaper.content }}</p>
-  <a href="{% url 'agency:newspaper-delete' pk=newspaper.id %}" class="link-to-page btn btn-danger link-to-page">
-      Delete
-    </a>
+  <div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1>
+            {{ newspaper.title }}
+          </h1>
+        </div>
+        <p class="text-muted small mb-2">
+        {% with publishers_list=newspaper.publishers.all %}
+          {% if publishers_list|length == 1 %}
+            Redactor:
+          {% else %}
+          Redactors:
+          {% endif %}
+          {% for publisher in publishers_list %}
+            {{ publisher.username }}{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        {% endwith %}
+        <br />
+        Published in: {{ newspaper.published_date|date:'M. d, Y, g:i a' }}
+        </p>
+        <p>{{ newspaper.content }}</p>
+        <a href="{% url 'agency:newspaper-delete' pk=newspaper.id %}" class="link-to-page btn btn-danger link-to-page me-2">
+          Delete
+        </a>
 
-    <a href="{% url 'agency:newspaper-update' pk=newspaper.id %}" class="link-to-page btn btn-secondary link-to-page">
-      Update
-    </a>
+        <a href="{% url 'agency:newspaper-update' pk=newspaper.id %}" class="link-to-page btn btn-secondary link-to-page">
+          Update
+        </a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
