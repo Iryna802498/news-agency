@@ -67,12 +67,12 @@ The project was created as part of a learning portfolio to demonstrate practical
 
 7. **Use the following credentials:**
     
-    Login: admin.user
-    Password: admin1234
+    - Login: admin.user
+    - Password: admin1234
 
 ---
 
 # 👩‍💻 Author
     
-    **Iryna Mishenko**
-    [github.com/Iryna802498](https://github.com/Iryna802498)
+    Iryna Mishenko
+    https://github.com/Iryna802498
