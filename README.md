@@ -67,7 +67,7 @@ The project was created as part of a learning portfolio to demonstrate practical
 
 7. **Use the following credentials:**
     
-    - Login: admin.user
+    - Login: admin@admin.admin
     - Password: admin1234
 
 ---
