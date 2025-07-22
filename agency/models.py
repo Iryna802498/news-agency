@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
-from news_agency import settings
+from news_agency.settings import base
 
 
 class Topic(models.Model):
@@ -23,7 +23,7 @@ class Newspaper(models.Model):
         related_name="newspapers",
     )
     publishers = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
+        base.AUTH_USER_MODEL,
         related_name="newspapers",
     )
 

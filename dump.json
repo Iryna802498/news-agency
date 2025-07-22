@@ -1,0 +1,230 @@
+[
+{
+    "model": "agency.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Politics"
+    }
+},
+{
+    "model": "agency.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Technology"
+    }
+},
+{
+    "model": "agency.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Health"
+    }
+},
+{
+    "model": "agency.topic",
+    "pk": 4,
+    "fields": {
+        "name": "Sports"
+    }
+},
+{
+    "model": "agency.topic",
+    "pk": 5,
+    "fields": {
+        "name": "Environment"
+    }
+},
+{
+    "model": "agency.newspaper",
+    "pk": 1,
+    "fields": {
+        "title": "Climate Crisis Worsens",
+        "content": "The latest UN report reveals alarming trends in global warming. Sea levels are rising faster than previously projected, extreme weather events are becoming more frequent, and ecosystems are under immense pressure. Scientists urge immediate international cooperation to reduce carbon emissions and transition to renewable energy sources. If no action is taken within the next decade, irreversible damage may be done to our planet’s climate systems.",
+        "published_date": "2025-07-11T14:07:08.577Z",
+        "topic": [
+            5
+        ],
+        "publishers": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "agency.newspaper",
+    "pk": 2,
+    "fields": {
+        "title": "AI Beats Human Champions",
+        "content": "In a historic event, an advanced AI model developed by researchers at DeepLogic Lab has defeated the world’s top-ranked human players in chess, Go, and StarCraft. This leap in artificial intelligence not only showcases the power of machine learning but also raises new questions about the role of humans in competitive fields and the future of AI ethics and regulation.",
+        "published_date": "2025-07-11T14:08:38.865Z",
+        "topic": [
+            2
+        ],
+        "publishers": [
+            3
+        ]
+    }
+},
+{
+    "model": "agency.newspaper",
+    "pk": 3,
+    "fields": {
+        "title": "Elections Shake Europe",
+        "content": "The recent European parliamentary elections brought unexpected results, with progressive parties gaining momentum across key nations. Analysts say the shift could signal a change in EU policies on immigration, climate, and economic reform. Voter turnout was the highest in over 20 years, suggesting increased political engagement among young Europeans.",
+        "published_date": "2025-07-11T14:10:32.859Z",
+        "topic": [
+            1
+        ],
+        "publishers": [
+            5,
+            2
+        ]
+    }
+},
+{
+    "model": "agency.newspaper",
+    "pk": 4,
+    "fields": {
+        "title": "Marathon World Record Broken",
+        "content": "Kenyan runner Elias Kiprotich stunned the world by completing the Berlin Marathon in 1:58:42, breaking the previous record by a full minute. This unprecedented achievement was made possible by a combination of cutting-edge training techniques, perfect weather conditions, and elite pacemakers. Kiprotich credited his victory to discipline, science, and the support of his coaching team.",
+        "published_date": "2025-07-11T14:12:11.473Z",
+        "topic": [
+            4
+        ],
+        "publishers": [
+            6
+        ]
+    }
+},
+{
+    "model": "agency.newspaper",
+    "pk": 5,
+    "fields": {
+        "title": "AI Revolutionizes Medical Diagnostics",
+        "content": "A cutting-edge AI system developed by MediTech Labs has outperformed human radiologists in detecting early-stage cancer from imaging scans. The system uses deep learning to analyze millions of medical records and improve diagnostic accuracy, potentially saving thousands of lives annually. Experts see this as a major leap in the integration of technology and healthcare, with potential applications in cardiology, dermatology, and infectious disease control. Privacy concerns and data ethics are still being debated as adoption grows rapidly.",
+        "published_date": "2025-07-11T14:15:50.306Z",
+        "topic": [
+            3,
+            2
+        ],
+        "publishers": [
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "agency.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$URYEti6rtiSqY4cFPl0yNm$O+N34fUBk2MujfHtxS/AME0kjUHH/f9ULtw6lwYxH/0=",
+        "last_login": "2025-07-16T21:20:36.821Z",
+        "is_superuser": true,
+        "username": "admin.user",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin.user@admin.admin",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-07-10T21:08:38.307Z",
+        "years_of_experience": 0,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "agency.redactor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$aNlHuLKucPdfLa7LvIF2QV$ppoqbo2+eYeBcduawazvlh18U6QRvwfKytPVy8oOVzc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "john.smith",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "john.smith@user.user",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-07-11T14:01:07.660Z",
+        "years_of_experience": 5,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "agency.redactor",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$5THfRoUsho6mntOr97UUlL$VaieWYZeE5l4K3PfhR4toDYSpd6XwZu1k7wxrJY0TeQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ann.doe",
+        "first_name": "Anna",
+        "last_name": "Doe",
+        "email": "anna.doe@user.user",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-07-11T14:02:01.725Z",
+        "years_of_experience": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "agency.redactor",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$DKYkwLLE5PGH7YyFiSlLHS$PK+sJsaaS36Hkg1zjRHx3LWmQJKEOuI+F+fxH73jt2g=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mark.wilson",
+        "first_name": "Mark",
+        "last_name": "Wilson",
+        "email": "mark.wilson@user.user",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-07-11T14:02:55.862Z",
+        "years_of_experience": 7,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "agency.redactor",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$yZOac0FJJxqfPLnhApYLhu$PRjy+ol31981vZFUlYQsjgy6UJsXsjqMEFBLUJ7Hi+I=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emma.clark",
+        "first_name": "Emma",
+        "last_name": "Clark",
+        "email": "emma.clark@user.user",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-07-11T14:03:53.706Z",
+        "years_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "agency.redactor",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$rLupNlIMwackuhKwyeO2tP$sOcU0Cr9nvhy5+Ot6T3pa5XlDbPi0wJkcBocfPFD5Bo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tom.lee",
+        "first_name": "Tomas",
+        "last_name": "Lee",
+        "email": "tom.lee@user.user",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-07-11T14:04:45.884Z",
+        "years_of_experience": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
