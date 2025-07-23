@@ -1,0 +1,36 @@
+{% extends "layouts/base-presentation.html" %}
+{% block content %}
+  <div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1>Newspaper list</h1>
+          <a href="{% url 'agency:newspaper-create' %}" class="btn btn-primary">Create</a>
+        </div>
+        {% block search_form %}
+          {% include 'agency/search_form.html' %}
+        {% endblock %}
+        {% if newspaper_list %}
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+            </tr>
+            {% for newspaper in newspaper_list %}
+              <tr>
+                <td>
+                  {{ newspaper.id }}
+                </td>
+                <td>
+                  <a href="{% url 'agency:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        {% else %}
+          <p>There are no newspapers!</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
