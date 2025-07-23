@@ -72,6 +72,12 @@ The project was created as part of a learning portfolio to demonstrate practical
 
 ---
 
+# Render link:
+
+👉 [https://news-agency-hnyj.onrender.com](https://news-agency-hnyj.onrender.com)
+
+---
+
 # 👩‍💻 Author
     
     Iryna Mishenko
